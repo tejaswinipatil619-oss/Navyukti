@@ -1,0 +1,4925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Navyukti — Smarter Digital Solutions for Modern Work</title>
+
+  <meta
+    name="description"
+    content="Discover practical AI resources, digital toolkits, business templates, and productivity solutions with Navyukti."
+  >
+
+  <meta name="theme-color" content="#f8f9f5">
+
+  <meta property="og:title" content="Navyukti — Work Smarter">
+  <meta
+    property="og:description"
+    content="Explore AI resources, digital products, and practical business toolkits."
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+    /* ========================================
+       1. DESIGN SYSTEM
+    ======================================== */
+
+    :root {
+      --bg: #f8f9f5;
+      --surface: #ffffff;
+      --surface-soft: #f0f2eb;
+
+      --ink: #171914;
+      --muted: #696d63;
+      --border: #e2e5dc;
+
+      --lime: #c8fa52;
+      --lime-hover: #b7ed3d;
+
+      --dark: #171914;
+      --dark-soft: #242820;
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --shadow:
+        0 18px 50px rgba(23, 25, 20, 0.07);
+
+      --container: 1160px;
+
+      --transition:
+        220ms ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--ink);
+
+      line-height: 1.65;
+      overflow-x: hidden;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body,
+    button,
+    input {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #8abf22;
+      outline-offset: 4px;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(
+        var(--container),
+        calc(100% - 40px)
+      );
+
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 660px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 17px;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+
+      background: #8abf22;
+      border-radius: 50%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(43px, 6vw, 76px);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      margin-bottom: 17px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .text-muted {
+      color: var(--muted);
+    }
+
+    .highlight {
+      position: relative;
+      display: inline;
+      z-index: 0;
+    }
+
+    .highlight::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      left: -3px;
+      right: -3px;
+      bottom: 3px;
+
+      height: 20px;
+
+      background: var(--lime);
+      transform: rotate(-1deg);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      min-height: 50px;
+      padding: 14px 22px;
+
+      border: 1px solid transparent;
+      border-radius: 999px;
+
+      font-size: 14px;
+      font-weight: 750;
+
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .button-primary:hover {
+      background: var(--lime-hover);
+    }
+
+    .button-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: #30352b;
+    }
+
+    .button-outline {
+      border-color: var(--border);
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      border-color: var(--ink);
+    }
+
+    .button-full {
+      width: 100%;
+    }
+
+    .arrow {
+      font-size: 17px;
+      transition: transform var(--transition);
+    }
+
+    .button:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ========================================
+       2. ANNOUNCEMENT BAR
+    ======================================== */
+
+    .announcement {
+      padding: 10px 15px;
+      text-align: center;
+
+      background: var(--dark);
+      color: white;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .announcement strong {
+      color: var(--lime);
+    }
+
+    /* ========================================
+       3. NAVIGATION
+    ======================================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(248, 249, 245, 0.93);
+      border-bottom: 1px solid rgba(226, 229, 220, 0.8);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1.4px;
+
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+
+      width: 35px;
+      height: 35px;
+
+      background: var(--lime);
+      border-radius: 11px;
+
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 650;
+      color: #50544b;
+
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cart-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 10px 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: white;
+      font-weight: 750;
+      font-size: 13px;
+    }
+
+    .cart-count {
+      display: grid;
+      place-items: center;
+
+      min-width: 22px;
+      height: 22px;
+      padding-inline: 5px;
+
+      background: var(--lime);
+      border-radius: 50%;
+
+      font-size: 11px;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: white;
+      font-size: 22px;
+    }
+
+    /* ========================================
+       4. HERO SECTION
+    ======================================== */
+
+    .hero {
+      padding: 85px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+
+      align-items: center;
+      gap: 42px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 24px;
+      padding: 8px 13px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: white;
+
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .hero-badge span {
+      width: 8px;
+      height: 8px;
+
+      background: #87bd1c;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+    }
+
+    .hero-description {
+      max-width: 520px;
+
+      margin-bottom: 28px;
+
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-top: 23px;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-note span {
+      color: #628b18;
+      font-weight: 900;
+    }
+
+    /* Creative product composition */
+
+    .hero-visual {
+      position: relative;
+
+      min-height: 520px;
+
+      display: grid;
+      place-items: center;
+
+      isolation: isolate;
+    }
+
+    .hero-glow {
+      position: absolute;
+      z-index: -2;
+
+      width: 390px;
+      height: 390px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200, 250, 82, 0.48),
+          rgba(200, 250, 82, 0.05) 68%,
+          transparent 72%
+        );
+
+      border-radius: 50%;
+    }
+
+    .hero-grid-pattern {
+      position: absolute;
+      z-index: -1;
+      inset: 20px;
+
+      opacity: 0.35;
+
+      background-image:
+        linear-gradient(
+          rgba(23, 25, 20, 0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(23, 25, 20, 0.08) 1px,
+          transparent 1px
+        );
+
+      background-size: 25px 25px;
+
+      mask-image:
+        radial-gradient(
+          ellipse at center,
+          black,
+          transparent 75%
+        );
+    }
+
+    .dashboard {
+      position: relative;
+      z-index: 2;
+
+      width: min(100%, 420px);
+
+      padding: 22px;
+
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+
+      background: rgba(255, 255, 255, 0.95);
+
+      box-shadow:
+        0 30px 90px rgba(23, 25, 20, 0.15),
+        0 5px 15px rgba(23, 25, 20, 0.05);
+
+      transform: rotate(-2deg);
+
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .dashboard-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 23px;
+    }
+
+    .dashboard-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .mini-mark {
+      display: grid;
+      place-items: center;
+
+      width: 30px;
+      height: 30px;
+
+      border-radius: 9px;
+      background: var(--lime);
+
+      font-weight: 900;
+    }
+
+    .live-label {
+      padding: 5px 9px;
+
+      border-radius: 999px;
+      background: #f0f3e8;
+
+      color: #4f6d19;
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .dashboard h3 {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .dashboard-subtitle {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      margin-top: 19px;
+    }
+
+    .metric {
+      padding: 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .metric-value {
+      display: block;
+
+      margin-top: 5px;
+
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .metric-detail {
+      margin-top: 3px;
+
+      color: #638a20;
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .workspace {
+      margin-top: 14px;
+      padding: 15px;
+
+      border-radius: 15px;
+      background: var(--dark);
+      color: white;
+    }
+
+    .workspace-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 13px;
+
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .workspace-top span:last-child {
+      color: var(--lime);
+    }
+
+    .workflow {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .workflow-step {
+      flex: 1;
+      min-width: 0;
+
+      padding: 9px 4px;
+
+      border: 1px solid #44493e;
+      border-radius: 8px;
+
+      background: #292d25;
+
+      text-align: center;
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+    .workflow-arrow {
+      color: var(--lime);
+      font-size: 12px;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+
+      padding: 14px;
+
+      border: 1px solid rgba(226, 229, 220, 0.9);
+      border-radius: 16px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform 350ms ease;
+    }
+
+    .floating-card:hover {
+      transform: translateY(-7px) rotate(0deg);
+    }
+
+    .floating-one {
+      top: 43px;
+      left: -3px;
+
+      width: 180px;
+
+      transform: rotate(-7deg);
+      animation: float-small 6s ease-in-out infinite;
+    }
+
+    .floating-two {
+      right: -2px;
+      bottom: 68px;
+
+      width: 175px;
+
+      transform: rotate(6deg);
+      animation: float-small 7s ease-in-out infinite reverse;
+    }
+
+    .float-label {
+      margin-bottom: 9px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .float-title {
+      margin-bottom: 7px;
+
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .float-icon {
+      display: grid;
+      place-items: center;
+
+      width: 32px;
+      height: 32px;
+
+      margin-bottom: 9px;
+
+      background: var(--lime);
+      border-radius: 10px;
+
+      font-size: 17px;
+    }
+
+    .mini-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .mini-pill {
+      padding: 4px 7px;
+
+      background: var(--surface-soft);
+      border-radius: 5px;
+
+      color: #555a4f;
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+    .decor-dot {
+      position: absolute;
+
+      width: 15px;
+      height: 15px;
+
+      background: var(--lime);
+      border: 3px solid white;
+
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+    }
+
+    .dot-one {
+      top: 30px;
+      right: 80px;
+    }
+
+    .dot-two {
+      bottom: 48px;
+      left: 35px;
+
+      width: 10px;
+      height: 10px;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-9px) rotate(-1deg);
+      }
+    }
+
+    @keyframes float-small {
+      0%, 100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -8px;
+      }
+    }
+
+    /* ========================================
+       5. VALUE STRIP
+    ======================================== */
+
+    .value-strip {
+      padding: 23px 0;
+
+      background: var(--dark);
+      color: white;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .value-icon {
+      display: grid;
+      place-items: center;
+
+      width: 30px;
+      height: 30px;
+
+      flex-shrink: 0;
+
+      border-radius: 9px;
+      background: #30362a;
+      color: var(--lime);
+    }
+
+    /* ========================================
+       6. PROBLEM / SOLUTION
+    ======================================== */
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .problem-card {
+      padding: 35px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
+      background: white;
+    }
+
+    .problem-card.solution {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: white;
+    }
+
+    .card-symbol {
+      display: grid;
+      place-items: center;
+
+      width: 47px;
+      height: 47px;
+
+      margin-bottom: 23px;
+
+      border-radius: 14px;
+      background: var(--surface-soft);
+
+      font-size: 22px;
+    }
+
+    .solution .card-symbol {
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+
+      margin: 25px 0 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+
+      font-size: 14px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+
+      display: grid;
+      place-items: center;
+
+      width: 22px;
+      height: 22px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--ink);
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .problem-card:not(.solution) .check-list li::before {
+      background: #edf0e7;
+    }
+
+    /* ========================================
+       7. PRODUCT CATEGORIES
+    ======================================== */
+
+    .categories {
+      background: var(--surface-soft);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      position: relative;
+
+      min-height: 240px;
+      padding: 25px;
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      background: white;
+
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+
+      border-color: #c5d0af;
+      box-shadow: var(--shadow);
+    }
+
+    .category-icon {
+      display: grid;
+      place-items: center;
+
+      width: 53px;
+      height: 53px;
+
+      margin-bottom: 26px;
+
+      border-radius: 16px;
+      background: var(--lime);
+
+      font-size: 25px;
+    }
+
+    .category-card h3 {
+      font-size: 18px;
+    }
+
+    .category-card p {
+      margin-bottom: 18px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .category-link {
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    /* ========================================
+       8. PRODUCT CATALOG
+    ======================================== */
+
+    .catalog-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      margin-bottom: 28px;
+    }
+
+    .filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-button {
+      padding: 10px 15px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: white;
+
+      font-size: 12px;
+      font-weight: 750;
+
+      transition:
+        background var(--transition),
+        color var(--transition);
+    }
+
+    .filter-button.active {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: white;
+    }
+
+    .search-box {
+      width: min(100%, 260px);
+
+      padding: 12px 15px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: white;
+
+      font-size: 13px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 0;
+
+      padding: 16px;
+
+      border: 1px solid var(--border);
+      border-radius: 23px;
+
+      background: white;
+
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+      animation: card-in 350ms ease both;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    @keyframes card-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-art {
+      position: relative;
+
+      display: grid;
+      place-items: center;
+
+      min-height: 190px;
+      overflow: hidden;
+
+      margin-bottom: 19px;
+
+      border-radius: 16px;
+      background: var(--surface-soft);
+    }
+
+    .product-art.dark-art {
+      background: var(--dark);
+      color: white;
+    }
+
+    .product-art.lime-art {
+      background: #eaffb9;
+    }
+
+    .product-art.white-art {
+      background: #f5f5f0;
+    }
+
+    .art-window {
+      width: 75%;
+      padding: 14px;
+
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 13px;
+
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+
+      transform: rotate(-4deg);
+    }
+
+    .art-window.dark-window {
+      background: #22261f;
+      color: white;
+      border-color: #3e4536;
+    }
+
+    .art-window-title {
+      margin-bottom: 10px;
+
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .art-line {
+      height: 6px;
+      margin: 7px 0;
+
+      border-radius: 5px;
+      background: #e5e8de;
+    }
+
+    .art-line.short {
+      width: 55%;
+    }
+
+    .art-line.medium {
+      width: 76%;
+    }
+
+    .dark-window .art-line {
+      background: #444a3c;
+    }
+
+    .art-chip {
+      display: inline-block;
+
+      margin-top: 9px;
+      padding: 5px 8px;
+
+      border-radius: 6px;
+      background: var(--lime);
+
+      font-size: 9px;
+      font-weight: 850;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+
+      padding: 6px 9px;
+
+      border-radius: 999px;
+      background: white;
+
+      font-size: 9px;
+      font-weight: 850;
+    }
+
+    .product-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .product-category {
+      margin-bottom: 8px;
+
+      color: #6a8c27;
+
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .product-description {
+      flex: 1;
+
+      margin-bottom: 17px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      padding-top: 16px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .product-price {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.7px;
+    }
+
+    .add-button {
+      display: grid;
+      place-items: center;
+
+      width: 43px;
+      height: 43px;
+
+      flex-shrink: 0;
+
+      border: none;
+      border-radius: 50%;
+
+      background: var(--lime);
+
+      font-size: 23px;
+      font-weight: 700;
+
+      transition:
+        transform var(--transition),
+        background var(--transition);
+    }
+
+    .add-button:hover {
+      transform: rotate(90deg);
+      background: var(--lime-hover);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+
+      padding: 40px;
+
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ========================================
+       9. HOW IT WORKS
+    ======================================== */
+
+    .steps-section {
+      background: var(--dark);
+      color: white;
+    }
+
+    .steps-section .section-description {
+      color: #b7bbae;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .step-card {
+      padding: 25px;
+
+      border: 1px solid #3a3f34;
+      border-radius: 20px;
+
+      background: #20241d;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+
+      width: 42px;
+      height: 42px;
+
+      margin-bottom: 28px;
+
+      border-radius: 12px;
+      background: var(--lime);
+
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+    }
+
+    .step-card p {
+      margin-bottom: 0;
+
+      color: #b7bbae;
+      font-size: 13px;
+    }
+
+    /* ========================================
+       10. WHY NAVYUKTI
+    ======================================== */
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .benefit-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      background: white;
+    }
+
+    .benefit-icon {
+      margin-bottom: 22px;
+      font-size: 27px;
+    }
+
+    .benefit-card h3 {
+      font-size: 18px;
+    }
+
+    .benefit-card p {
+      margin-bottom: 0;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ========================================
+       11. AUDIENCE
+    ======================================== */
+
+    .audience {
+      padding-top: 0;
+    }
+
+    .audience-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 45px;
+
+      padding: 48px;
+
+      border-radius: var(--radius-lg);
+      background: var(--lime);
+    }
+
+    .audience-panel h2 {
+      font-size: clamp(32px, 4vw, 45px);
+    }
+
+    .audience-panel .section-description {
+      color: #3f4930;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-content: center;
+      gap: 12px;
+    }
+
+    .audience-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      padding: 15px;
+
+      border: 1px solid rgba(23, 25, 20, 0.12);
+      border-radius: 13px;
+
+      background: rgba(255, 255, 255, 0.57);
+
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .audience-item span {
+      font-size: 19px;
+    }
+
+    /* ========================================
+       12. PRICING
+    ======================================== */
+
+    .pricing-section {
+      background: var(--surface-soft);
+    }
+
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      width: fit-content;
+
+      margin: 0 auto 40px;
+      padding: 5px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: white;
+    }
+
+    .billing-button {
+      padding: 11px 17px;
+
+      border: none;
+      border-radius: 999px;
+
+      background: transparent;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .billing-button.active {
+      background: var(--dark);
+      color: white;
+    }
+
+    .save-label {
+      margin-left: 4px;
+
+      color: #6c9128;
+
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .pricing-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 23px;
+
+      background: white;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--dark);
+      background: var(--dark);
+      color: white;
+
+      transform: translateY(-8px);
+    }
+
+    .popular-label {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+      background: var(--lime);
+
+      color: var(--ink);
+
+      font-size: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+
+      transform: translateX(-50%);
+    }
+
+    .plan-label {
+      margin-bottom: 10px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .featured .plan-label {
+      color: #c4c9bd;
+    }
+
+    .plan-description {
+      min-height: 45px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .featured .plan-description {
+      color: #c4c9bd;
+    }
+
+    .plan-price {
+      margin: 18px 0 5px;
+
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .plan-period {
+      margin-bottom: 25px;
+
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .featured .plan-period {
+      color: #c4c9bd;
+    }
+
+    .plan-divider {
+      height: 1px;
+      margin-bottom: 22px;
+
+      background: var(--border);
+    }
+
+    .featured .plan-divider {
+      background: #41463a;
+    }
+
+    .plan-features {
+      display: grid;
+      gap: 13px;
+
+      margin: 0 0 28px;
+      padding: 0;
+
+      list-style: none;
+
+      flex: 1;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+
+      font-size: 12px;
+    }
+
+    .plan-features li::before {
+      content: "✓";
+
+      color: #719b21;
+      font-weight: 900;
+    }
+
+    .featured .plan-features li::before {
+      color: var(--lime);
+    }
+
+    .pricing-card .button {
+      width: 100%;
+    }
+
+    .pricing-note {
+      max-width: 700px;
+
+      margin: 28px auto 0;
+
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* ========================================
+       13. BUNDLES
+    ======================================== */
+
+    .bundle-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+
+      padding: 45px;
+
+      border-radius: var(--radius-lg);
+      background: #e9efdc;
+    }
+
+    .bundle-visual {
+      position: relative;
+
+      min-height: 310px;
+
+      display: grid;
+      place-items: center;
+    }
+
+    .bundle-sheet {
+      position: absolute;
+
+      width: 230px;
+      min-height: 235px;
+
+      padding: 25px;
+
+      border: 1px solid var(--border);
+      border-radius: 19px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .bundle-sheet.back {
+      transform: rotate(10deg) translate(24px, 0);
+    }
+
+    .bundle-sheet.middle {
+      transform: rotate(-8deg) translate(-17px, 3px);
+    }
+
+    .bundle-sheet.front {
+      transform: rotate(1deg) translate(0, 6px);
+    }
+
+    .bundle-sheet .mini-mark {
+      margin-bottom: 20px;
+    }
+
+    .bundle-sheet h3 {
+      font-size: 19px;
+    }
+
+    .bundle-sheet p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .bundle-tag {
+      display: inline-block;
+
+      padding: 5px 8px;
+
+      border-radius: 7px;
+      background: var(--lime);
+
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .bundle-price {
+      margin: 18px 0;
+
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    /* ========================================
+       14. FAQ
+    ======================================== */
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 65px;
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      width: 100%;
+      padding: 22px 0;
+
+      border: none;
+      background: transparent;
+
+      text-align: left;
+
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .faq-symbol {
+      display: grid;
+      place-items: center;
+
+      width: 30px;
+      height: 30px;
+
+      flex-shrink: 0;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      font-size: 18px;
+
+      transition: transform var(--transition);
+    }
+
+    .faq-question[aria-expanded="true"] .faq-symbol {
+      transform: rotate(45deg);
+      background: var(--lime);
+      border-color: var(--lime);
+    }
+
+    .faq-answer {
+      padding: 0 38px 22px 0;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq-answer[hidden] {
+      display: none;
+    }
+
+    /* ========================================
+       15. FINAL CTA
+    ======================================== */
+
+    .final-cta {
+      padding: 0 0 100px;
+    }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+
+      padding: 65px 30px;
+
+      border-radius: 30px;
+
+      background: var(--dark);
+      color: white;
+
+      text-align: center;
+    }
+
+    .cta-panel::before,
+    .cta-panel::after {
+      content: "";
+
+      position: absolute;
+
+      width: 230px;
+      height: 230px;
+
+      border: 1px solid rgba(200, 250, 82, 0.22);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .cta-panel::before {
+      top: -130px;
+      left: -70px;
+
+      box-shadow:
+        0 0 0 25px rgba(200, 250, 82, 0.04),
+        0 0 0 50px rgba(200, 250, 82, 0.03);
+    }
+
+    .cta-panel::after {
+      right: -90px;
+      bottom: -150px;
+
+      box-shadow:
+        0 0 0 25px rgba(200, 250, 82, 0.04),
+        0 0 0 50px rgba(200, 250, 82, 0.03);
+    }
+
+    .cta-panel h2 {
+      position: relative;
+      z-index: 1;
+
+      max-width: 700px;
+      margin-inline: auto;
+
+      font-size: clamp(35px, 5vw, 57px);
+    }
+
+    .cta-panel p {
+      position: relative;
+      z-index: 1;
+
+      max-width: 550px;
+      margin: 0 auto 26px;
+
+      color: #c0c5b8;
+      font-size: 15px;
+    }
+
+    .cta-panel .button {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========================================
+       16. FOOTER
+    ======================================== */
+
+    .footer {
+      padding: 55px 0 25px;
+
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+
+      padding-bottom: 40px;
+    }
+
+    .footer-description {
+      max-width: 300px;
+
+      margin-top: 17px;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-heading {
+      margin-bottom: 18px;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      padding-top: 23px;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    /* ========================================
+       17. CART DRAWER
+    ======================================== */
+
+    .drawer-overlay {
+      position: fixed;
+      z-index: 1998;
+      inset: 0;
+
+      background: rgba(12, 14, 10, 0.45);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity var(--transition),
+        visibility var(--transition);
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      z-index: 1999;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: min(430px, 100%);
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 25px;
+
+      background: white;
+
+      box-shadow: -20px 0 70px rgba(0, 0, 0, 0.12);
+
+      transform: translateX(105%);
+
+      transition: transform 280ms ease;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-bottom: 22px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .close-button {
+      display: grid;
+      place-items: center;
+
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: white;
+
+      font-size: 22px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+
+      padding: 20px 0;
+    }
+
+    .cart-empty {
+      padding: 50px 10px;
+
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 15px;
+
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item h3 {
+      margin-bottom: 5px;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .cart-item p {
+      margin: 0;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .cart-item-price {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .remove-item {
+      margin-top: 9px;
+      padding: 0;
+
+      border: none;
+      background: transparent;
+
+      color: #8a4638;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .cart-footer {
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cart-total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 18px;
+
+      font-size: 15px;
+      font-weight: 850;
+    }
+
+    .cart-disclaimer {
+      margin-top: 12px;
+
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    /* ========================================
+       18. TOAST NOTIFICATIONS
+    ======================================== */
+
+    .toast {
+      position: fixed;
+      z-index: 3000;
+
+      right: 22px;
+      bottom: 22px;
+
+      max-width: min(360px, calc(100% - 44px));
+
+      padding: 15px 19px;
+
+      border: 1px solid #3f4933;
+      border-radius: 13px;
+
+      background: var(--dark);
+      color: white;
+
+      box-shadow: var(--shadow);
+
+      font-size: 13px;
+      font-weight: 650;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(15px);
+
+      transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       19. SCROLL REVEALS
+    ======================================== */
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+    }
+
+    .js .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       20. RESPONSIVE DESIGN
+    ======================================== */
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 17px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 0.95fr;
+        gap: 20px;
+      }
+
+      .hero-visual {
+        min-height: 470px;
+      }
+
+      .dashboard {
+        width: 90%;
+      }
+
+      .floating-one {
+        left: -8px;
+        width: 155px;
+      }
+
+      .floating-two {
+        right: -8px;
+        width: 155px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-actions > .button {
+        display: none;
+      }
+
+      .nav-links {
+        position: absolute;
+
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+
+        padding: 12px 20px 20px;
+
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.04);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 0;
+
+        border-bottom: 1px solid var(--border);
+
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 65px 0 60px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+      }
+
+      .hero-visual {
+        width: min(100%, 580px);
+        margin-inline: auto;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .audience-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        padding: 35px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        max-width: 480px;
+        margin-inline: auto;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .bundle-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        padding: 30px;
+      }
+
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      .announcement {
+        font-size: 10px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .nav-inner {
+        gap: 10px;
+      }
+
+      .nav-actions {
+        gap: 8px;
+      }
+
+      .cart-button {
+        padding: 9px 10px;
+      }
+
+      .hero {
+        padding-top: 47px;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 12vw, 55px);
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 370px;
+      }
+
+      .hero-glow {
+        width: 270px;
+        height: 270px;
+      }
+
+      .dashboard {
+        width: 94%;
+        padding: 15px;
+
+        border-radius: 19px;
+      }
+
+      .dashboard h3 {
+        font-size: 17px;
+      }
+
+      .metric {
+        padding: 10px;
+      }
+
+      .metric-value {
+        font-size: 20px;
+      }
+
+      .workflow {
+        gap: 4px;
+      }
+
+      .workflow-step {
+        font-size: 7px;
+      }
+
+      .floating-one {
+        top: 4px;
+        left: -3px;
+
+        width: 132px;
+        padding: 10px;
+      }
+
+      .floating-two {
+        right: -3px;
+        bottom: 5px;
+
+        width: 132px;
+        padding: 10px;
+      }
+
+      .float-title {
+        font-size: 11px;
+      }
+
+      .float-label {
+        font-size: 9px;
+      }
+
+      .value-grid {
+        gap: 15px 8px;
+      }
+
+      .value-item {
+        justify-content: flex-start;
+        font-size: 10px;
+      }
+
+      .value-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .problem-card {
+        padding: 25px;
+      }
+
+      .category-grid,
+      .product-grid,
+      .steps-grid,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: auto;
+      }
+
+      .product-art {
+        min-height: 205px;
+      }
+
+      .catalog-controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .audience-panel {
+        padding: 25px;
+      }
+
+      .audience-list {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card {
+        padding: 25px;
+      }
+
+      .pricing-toggle {
+        max-width: 100%;
+      }
+
+      .billing-button {
+        padding: 10px 12px;
+        font-size: 11px;
+      }
+
+      .bundle-panel {
+        padding: 25px 20px;
+      }
+
+      .bundle-visual {
+        min-height: 280px;
+        overflow: hidden;
+      }
+
+      .bundle-sheet {
+        width: 190px;
+        min-height: 220px;
+      }
+
+      .cta-panel {
+        padding: 48px 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT -->
+
+  <div class="announcement">
+    Practical digital solutions for modern work.
+    <strong> Explore Navyukti →</strong>
+  </div>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a class="brand" href="#home" aria-label="Navyukti home">
+        <span class="brand-mark">N</span>
+        <span>Navyukti</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#pricing">Membership</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button
+          class="cart-button"
+          id="openCart"
+          type="button"
+          aria-label="Open shopping cart"
+        >
+          Cart
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <a href="#products" class="button button-primary">
+          Explore Products <span class="arrow">↗</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+
+          <div class="hero-badge">
+            <span></span>
+            DIGITAL SOLUTIONS FOR MODERN WORK
+          </div>
+
+          <h1>
+            Work smarter.<br>
+            Build better.<br>
+            <span class="highlight">Do more.</span>
+          </h1>
+
+          <p class="hero-description">
+            Discover practical AI resources, ready-to-use digital
+            toolkits, and productivity solutions designed to make
+            everyday work simpler.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#products" class="button button-primary">
+              Explore Digital Products
+              <span class="arrow">↗</span>
+            </a>
+
+            <a href="#solutions" class="button button-outline">
+              Discover Our Solutions
+            </a>
+
+          </div>
+
+          <div class="hero-note">
+            <span>✓</span>
+            Practical resources for businesses, freelancers and professionals.
+          </div>
+
+        </div>
+
+        <!-- CREATIVE HERO COMPOSITION -->
+
+        <div class="hero-visual" aria-label="Illustrative digital workspace">
+
+          <div class="hero-glow"></div>
+          <div class="hero-grid-pattern"></div>
+
+          <div class="decor-dot dot-one"></div>
+          <div class="decor-dot dot-two"></div>
+
+          <div class="floating-card floating-one">
+
+            <div class="float-icon">✳</div>
+
+            <div class="float-label">AI RESOURCE KIT</div>
+
+            <div class="float-title">
+              Your next idea,<br>ready to build.
+            </div>
+
+            <div class="mini-pills">
+              <span class="mini-pill">Prompts</span>
+              <span class="mini-pill">Workflows</span>
+            </div>
+
+          </div>
+
+          <div class="dashboard">
+
+            <div class="dashboard-top">
+
+              <div class="dashboard-brand">
+                <span class="mini-mark">N</span>
+                Navyukti Workspace
+              </div>
+
+              <span class="live-label">YOUR TOOLKIT</span>
+
+            </div>
+
+            <h3>Everything in one place.</h3>
+
+            <p class="dashboard-subtitle">
+              An illustrative preview of your digital workspace.
+            </p>
+
+            <div class="metric-grid">
+
+              <div class="metric">
+                <span class="metric-label">AI Resources</span>
+                <strong class="metric-value">01</strong>
+                <div class="metric-detail">Explore the collection</div>
+              </div>
+
+              <div class="metric">
+                <span class="metric-label">Digital Toolkits</span>
+                <strong class="metric-value">02</strong>
+                <div class="metric-detail">Ready-to-use resources</div>
+              </div>
+
+            </div>
+
+            <div class="workspace">
+
+              <div class="workspace-top">
+                <span>Productivity Workflow</span>
+                <span>● Preview</span>
+              </div>
+
+              <div class="workflow">
+
+                <div class="workflow-step">Discover</div>
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-step">Organize</div>
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-step">Create</div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="floating-card floating-two">
+
+            <div class="float-label">DIGITAL TOOLKIT</div>
+
+            <div class="float-icon">▤</div>
+
+            <div class="float-title">
+              Organized resources.<br>
+              Less busywork.
+            </div>
+
+            <div class="mini-pills">
+              <span class="mini-pill">Templates</span>
+              <span class="mini-pill">Guides</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- VALUE STRIP -->
+
+    <section class="value-strip" aria-label="Navyukti benefits">
+
+      <div class="container value-grid">
+
+        <div class="value-item">
+          <span class="value-icon">✳</span>
+          Practical AI Resources
+        </div>
+
+        <div class="value-item">
+          <span class="value-icon">▤</span>
+          Ready-to-Use Toolkits
+        </div>
+
+        <div class="value-item">
+          <span class="value-icon">↗</span>
+          Productivity Solutions
+        </div>
+
+        <div class="value-item">
+          <span class="value-icon">◇</span>
+          Flexible Digital Products
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+
+    <section class="section" id="solutions">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">A Simpler Way to Work</div>
+
+          <h2>
+            Less searching.<br>
+            More <span class="highlight">doing.</span>
+          </h2>
+
+          <p class="section-description">
+            Finding useful tools is only the beginning.
+            Navyukti brings practical resources and organized
+            digital solutions together in one place.
+          </p>
+
+        </div>
+
+        <div class="problem-grid">
+
+          <article class="problem-card reveal">
+
+            <div class="card-symbol">↗</div>
+
+            <h3>When work gets complicated</h3>
+
+            <p class="text-muted">
+              Too many scattered resources, repetitive tasks,
+              and templates that need to be built from scratch
+              can make everyday work harder to manage.
+            </p>
+
+            <ul class="check-list">
+              <li>Time spent finding useful resources</li>
+              <li>Repetitive tasks and scattered workflows</li>
+              <li>Starting projects with a blank page</li>
+            </ul>
+
+          </article>
+
+          <article class="problem-card solution reveal">
+
+            <div class="card-symbol">✳</div>
+
+            <h3>A more practical approach</h3>
+
+            <p style="color:#c0c5b8">
+              Explore organized resources designed to give you
+              a clearer starting point for your next task or project.
+            </p>
+
+            <ul class="check-list">
+              <li>AI prompts and workflow resources</li>
+              <li>Business and productivity templates</li>
+              <li>Digital toolkits for everyday work</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="section categories" id="categories">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">Explore the Collection</div>
+
+          <h2>
+            Digital solutions for<br>
+            <span class="highlight">the way you work.</span>
+          </h2>
+
+          <p class="section-description">
+            Explore resources by your goals, your projects,
+            and the kind of work you do.
+          </p>
+
+        </div>
+
+        <div class="category-grid">
+
+          <article class="category-card reveal">
+
+            <div class="category-icon">✳</div>
+
+            <h3>AI Solutions</h3>
+
+            <p>
+              Prompts, guides, and practical AI workflow resources.
+            </p>
+
+            <a class="category-link" href="#products" data-filter-link="ai">
+              Explore AI Resources ↗
+            </a>
+
+          </article>
+
+          <article class="category-card reveal">
+
+            <div class="category-icon">▤</div>
+
+            <h3>Digital Products</h3>
+
+            <p>
+              Templates, planners, guides, and content resources.
+            </p>
+
+            <a class="category-link" href="#products" data-filter-link="digital">
+              Explore Products ↗
+            </a>
+
+          </article>
+
+          <article class="category-card reveal">
+
+            <div class="category-icon">▦</div>
+
+            <h3>Business Toolkits</h3>
+
+            <p>
+              Organized resources for business and freelance projects.
+            </p>
+
+            <a class="category-link" href="#products" data-filter-link="business">
+              Explore Toolkits ↗
+            </a>
+
+          </article>
+
+          <article class="category-card reveal">
+
+            <div class="category-icon">⌘</div>
+
+            <h3>Productivity</h3>
+
+            <p>
+              Planning resources and systems for everyday tasks.
+            </p>
+
+            <a class="category-link" href="#products" data-filter-link="productivity">
+              Explore Resources ↗
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="section" id="products">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">The Digital Store</div>
+
+          <h2>
+            Find your next<br>
+            <span class="highlight">useful resource.</span>
+          </h2>
+
+          <p class="section-description">
+            Browse a sample collection of digital resources.
+            Product details and prices are illustrative until
+            the actual products are prepared for launch.
+          </p>
+
+        </div>
+
+        <div class="catalog-controls">
+
+          <div class="filter-list" aria-label="Filter products">
+
+            <button
+              class="filter-button active"
+              data-filter="all"
+              type="button"
+              aria-pressed="true"
+            >
+              All Products
+            </button>
+
+            <button
+              class="filter-button"
+              data-filter="ai"
+              type="button"
+              aria-pressed="false"
+            >
+              AI Resources
+            </button>
+
+            <button
+              class="filter-button"
+              data-filter="digital"
+              type="button"
+              aria-pressed="false"
+            >
+              Digital Products
+            </button>
+
+            <button
+              class="filter-button"
+              data-filter="business"
+              type="button"
+              aria-pressed="false"
+            >
+              Business
+            </button>
+
+            <button
+              class="filter-button"
+              data-filter="productivity"
+              type="button"
+              aria-pressed="false"
+            >
+              Productivity
+            </button>
+
+          </div>
+
+          <label>
+            <span class="sr-only"></span>
+            <input
+              class="search-box"
+              type="search"
+              id="productSearch"
+              placeholder="Search products..."
+              aria-label="Search products"
+            >
+          </label>
+
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <!-- Product 1 -->
+
+          <article
+            class="product-card reveal"
+            data-category="ai"
+            data-name="AI Prompt Starter Kit"
+          >
+
+            <div class="product-art dark-art">
+
+              <span class="product-badge">AI RESOURCES</span>
+
+              <div class="art-window dark-window">
+
+                <div class="art-window-title">
+                  AI Prompt Collection
+                </div>
+
+                <div class="art-line"></div>
+                <div class="art-line medium"></div>
+                <div class="art-line short"></div>
+
+                <span class="art-chip">Ready to customize</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">AI Resources</div>
+
+              <h3>AI Prompt Starter Kit</h3>
+
+              <p class="product-description">
+                A sample collection of prompts for brainstorming,
+                drafting, planning, and everyday tasks.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹199</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="ai-prompts"
+                  aria-label="Add AI Prompt Starter Kit to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Product 2 -->
+
+          <article
+            class="product-card reveal"
+            data-category="digital"
+            data-name="Content Creation Toolkit"
+          >
+
+            <div class="product-art lime-art">
+
+              <span class="product-badge">CREATOR TOOLS</span>
+
+              <div class="art-window">
+
+                <div class="art-window-title">
+                  Content Planner
+                </div>
+
+                <div class="art-line medium"></div>
+                <div class="art-line"></div>
+                <div class="art-line short"></div>
+
+                <span class="art-chip">Plan · Create · Publish</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">Digital Products</div>
+
+              <h3>Content Creation Toolkit</h3>
+
+              <p class="product-description">
+                Sample planning templates and content organization
+                resources for creators and small teams.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹349</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="content-toolkit"
+                  aria-label="Add Content Creation Toolkit to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Product 3 -->
+
+          <article
+            class="product-card reveal"
+            data-category="business"
+            data-name="Small Business Toolkit"
+          >
+
+            <div class="product-art dark-art">
+
+              <span class="product-badge">BUSINESS</span>
+
+              <div class="art-window">
+
+                <div class="art-window-title">
+                  Business Essentials
+                </div>
+
+                <div class="art-line"></div>
+                <div class="art-line short"></div>
+                <div class="art-line medium"></div>
+
+                <span class="art-chip">Organize your work</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">Business Toolkits</div>
+
+              <h3>Small Business Toolkit</h3>
+
+              <p class="product-description">
+                A sample set of business planning documents,
+                checklists, and reusable templates.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹499</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="business-toolkit"
+                  aria-label="Add Small Business Toolkit to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Product 4 -->
+
+          <article
+            class="product-card reveal"
+            data-category="productivity"
+            data-name="Productivity Planner"
+          >
+
+            <div class="product-art white-art">
+
+              <span class="product-badge">PLANNING</span>
+
+              <div class="art-window">
+
+                <div class="art-window-title">
+                  Weekly Planner
+                </div>
+
+                <div class="art-line"></div>
+                <div class="art-line medium"></div>
+                <div class="art-line"></div>
+
+                <span class="art-chip">Plan your priorities</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">Productivity</div>
+
+              <h3>Productivity Planner</h3>
+
+              <p class="product-description">
+                A sample planning resource for organizing
+                priorities, tasks, and weekly goals.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹199</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="productivity-planner"
+                  aria-label="Add Productivity Planner to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Product 5 -->
+
+          <article
+            class="product-card reveal"
+            data-category="ai"
+            data-name="AI Workflow Templates"
+          >
+
+            <div class="product-art lime-art">
+
+              <span class="product-badge">WORKFLOWS</span>
+
+              <div class="art-window">
+
+                <div class="art-window-title">
+                  Workflow Builder
+                </div>
+
+                <div class="art-line medium"></div>
+                <div class="art-line"></div>
+                <div class="art-line short"></div>
+
+                <span class="art-chip">Structure your process</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">AI Resources</div>
+
+              <h3>AI Workflow Templates</h3>
+
+              <p class="product-description">
+                Example workflow frameworks to help organize
+                repeatable tasks and AI-assisted processes.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹349</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="ai-workflows"
+                  aria-label="Add AI Workflow Templates to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Product 6 -->
+
+          <article
+            class="product-card reveal"
+            data-category="business"
+            data-name="Freelancer Starter Bundle"
+          >
+
+            <div class="product-art dark-art">
+
+              <span class="product-badge">FREELANCERS</span>
+
+              <div class="art-window dark-window">
+
+                <div class="art-window-title">
+                  Freelancer Resources
+                </div>
+
+                <div class="art-line"></div>
+                <div class="art-line short"></div>
+                <div class="art-line medium"></div>
+
+                <span class="art-chip">Plan your next project</span>
+
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">Business Toolkits</div>
+
+              <h3>Freelancer Starter Bundle</h3>
+
+              <p class="product-description">
+                A sample bundle of project planning,
+                client organization, and business templates.
+              </p>
+
+              <div class="product-bottom">
+
+                <span class="product-price">₹799</span>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-product="freelancer-bundle"
+                  aria-label="Add Freelancer Starter Bundle to cart"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section steps-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">Simple by Design</div>
+
+          <h2>
+            From discovery<br>
+            to <span class="highlight">getting started.</span>
+          </h2>
+
+          <p class="section-description">
+            The intended customer journey is straightforward.
+            Digital delivery and checkout will be connected
+            before the store goes live.
+          </p>
+
+        </div>
+
+        <div class="steps-grid">
+
+          <article class="step-card reveal">
+
+            <div class="step-number">01</div>
+
+            <h3>Discover</h3>
+
+            <p>
+              Browse AI resources, digital products,
+              and practical toolkits.
+            </p>
+
+          </article>
+
+          <article class="step-card reveal">
+
+            <div class="step-number">02</div>
+
+            <h3>Choose</h3>
+
+            <p>
+              Compare products and choose the resources
+              that fit your needs.
+            </p>
+
+          </article>
+
+          <article class="step-card reveal">
+
+            <div class="step-number">03</div>
+
+            <h3>Purchase</h3>
+
+            <p>
+              Complete a secure checkout once the payment
+              integration is configured.
+            </p>
+
+          </article>
+
+          <article class="step-card reveal">
+
+            <div class="step-number">04</div>
+
+            <h3>Access</h3>
+
+            <p>
+              Access purchased downloads through the
+              configured delivery system.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHY NAVYUKTI -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">The Navyukti Approach</div>
+
+          <h2>
+            Useful resources.<br>
+            <span class="highlight">Clear purpose.</span>
+          </h2>
+
+          <p class="section-description">
+            A practical digital resource collection built
+            around everyday work and real project needs.
+          </p>
+
+        </div>
+
+        <div class="benefit-grid">
+
+          <article class="benefit-card reveal">
+
+            <div class="benefit-icon">✳</div>
+
+            <h3>Practical by Design</h3>
+
+            <p>
+              Resources intended to help you move from
+              an idea to a more organized starting point.
+            </p>
+
+          </article>
+
+          <article class="benefit-card reveal">
+
+            <div class="benefit-icon">▤</div>
+
+            <h3>Organized Resources</h3>
+
+            <p>
+              Browse collections grouped around AI,
+              productivity, digital products, and business.
+            </p>
+
+          </article>
+
+          <article class="benefit-card reveal">
+
+            <div class="benefit-icon">⌘</div>
+
+            <h3>Flexible Options</h3>
+
+            <p>
+              Choose individual resources, curated bundles,
+              or membership options as they become available.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TARGET AUDIENCE -->
+
+    <section class="section audience">
+
+      <div class="container">
+
+        <div class="audience-panel reveal">
+
+          <div>
+
+            <div class="eyebrow">Made for Modern Work</div>
+
+            <h2>
+              Your work.<br>
+              Your next step.
+            </h2>
+
+            <p class="section-description">
+              Explore resources that fit your role,
+              projects, and productivity goals.
+            </p>
+
+            <a href="#products" class="button button-dark">
+              Find Your Resources <span class="arrow">↗</span>
+            </a>
+
+          </div>
+
+          <div class="audience-list">
+
+            <div class="audience-item">
+              <span>▦</span>
+              Small Businesses
+            </div>
+
+            <div class="audience-item">
+              <span>⌘</span>
+              Freelancers
+            </div>
+
+            <div class="audience-item">
+              <span>✳</span>
+              Content Creators
+            </div>
+
+            <div class="audience-item">
+              <span>▤</span>
+              Corporate Professionals
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MEMBERSHIP PRICING -->
+
+    <section class="section pricing-section" id="pricing">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">Membership Options</div>
+
+          <h2>
+            More resources.<br>
+            <span class="highlight">Your way.</span>
+          </h2>
+
+          <p class="section-description">
+            Explore illustrative membership tiers.
+            Final benefits, included resources, and billing
+            terms must be confirmed before launch.
+          </p>
+
+        </div>
+
+        <div
+          class="pricing-toggle"
+          role="group"
+          aria-label="Membership billing period"
+        >
+
+          <button
+            class="billing-button active"
+            type="button"
+            data-billing="monthly"
+            aria-pressed="true"
+          >
+            Monthly
+          </button>
+
+          <button
+            class="billing-button"
+            type="button"
+            data-billing="yearly"
+            aria-pressed="false"
+          >
+            Yearly <span class="save-label">Annual plan</span>
+          </button>
+
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- STARTER -->
+
+          <article class="pricing-card reveal">
+
+            <div class="plan-label">Starter</div>
+
+            <h3>Explore the Essentials</h3>
+
+            <p class="plan-description">
+              For individuals beginning their digital toolkit journey.
+            </p>
+
+            <div class="plan-price"
+              data-monthly="₹299"
+              data-yearly="₹2,990"
+            >
+              ₹299
+            </div>
+
+            <div
+              class="plan-period"
+              data-monthly="Billed monthly"
+              data-yearly="Billed yearly"
+            >
+              Billed monthly
+            </div>
+
+            <div class="plan-divider"></div>
+
+            <ul class="plan-features">
+              <li>Access to included Starter resources</li>
+              <li>Member dashboard when available</li>
+              <li>Membership resource updates as specified</li>
+              <li>Standard support channels</li>
+            </ul>
+
+            <button
+              class="button button-outline choose-plan"
+              type="button"
+              data-plan="Starter"
+            >
+              Explore Starter
+            </button>
+
+          </article>
+
+          <!-- PRO -->
+
+          <article class="pricing-card featured reveal">
+
+            <div class="popular-label">FEATURED PLAN</div>
+
+            <div class="plan-label">Pro</div>
+
+            <h3>For Active Creators</h3>
+
+            <p class="plan-description">
+              For freelancers and professionals who want
+              a broader resource collection.
+            </p>
+
+            <div class="plan-price"
+              data-monthly="₹499"
+              data-yearly="₹4,990"
+            >
+              ₹499
+            </div>
+
+            <div
+              class="plan-period"
+              data-monthly="Billed monthly"
+              data-yearly="Billed yearly"
+            >
+              Billed monthly
+            </div>
+
+            <div class="plan-divider"></div>
+
+            <ul class="plan-features">
+              <li>Everything included in Starter</li>
+              <li>Additional resources specified in the plan</li>
+              <li>Eligible toolkit collections</li>
+              <li>Member dashboard when available</li>
+            </ul>
+
+            <button
+              class="button button-primary choose-plan"
+              type="button"
+              data-plan="Pro"
+            >
+              Explore Pro <span class="arrow">↗</span>
+            </button>
+
+          </article>
+
+          <!-- BUSINESS -->
+
+          <article class="pricing-card reveal">
+
+            <div class="plan-label">Business</div>
+
+            <h3>For Growing Teams</h3>
+
+            <p class="plan-description">
+              For businesses seeking an organized collection
+              of practical digital resources.
+            </p>
+
+            <div class="plan-price"
+              data-monthly="₹799"
+              data-yearly="₹7,990"
+            >
+              ₹799
+            </div>
+
+            <div
+              class="plan-period"
+              data-monthly="Billed monthly"
+              data-yearly="Billed yearly"
+            >
+              Billed monthly
+            </div>
+
+            <div class="plan-divider"></div>
+
+            <ul class="plan-features">
+              <li>Everything included in the specified plan</li>
+              <li>Eligible business toolkit resources</li>
+              <li>Resources for business workflows</li>
+              <li>Support under the published terms</li>
+            </ul>
+
+            <button
+              class="button button-outline choose-plan"
+              type="button"
+              data-plan="Business"
+            >
+              Explore Business
+            </button>
+
+          </article>
+
+        </div>
+
+        <p class="pricing-note">
+          Prices are illustrative. Membership availability, included
+          resources, renewal terms, taxes, and cancellation conditions
+          must be confirmed before accepting payments.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- PREMIUM BUNDLE -->
+
+    <section class="section" id="bundles">
+
+      <div class="container">
+
+        <div class="bundle-panel reveal">
+
+          <div class="bundle-visual" aria-label="Illustration of a digital product bundle">
+
+            <div class="bundle-sheet back">
+              <span class="mini-mark">N</span>
+              <h3>AI Resources</h3>
+              <p>Prompts and workflow guides.</p>
+              <span class="bundle-tag">AI</span>
+            </div>
+
+            <div class="bundle-sheet middle">
+              <span class="mini-mark">N</span>
+              <h3>Business Tools</h3>
+              <p>Planning templates and checklists.</p>
+              <span class="bundle-tag">BUSINESS</span>
+            </div>
+
+            <div class="bundle-sheet front">
+              <span class="mini-mark">N</span>
+              <h3>Digital Toolkit</h3>
+              <p>Resources organized for your next project.</p>
+              <span class="bundle-tag">BUNDLE</span>
+            </div>
+
+          </div>
+
+          <div>
+
+            <div class="eyebrow">Curated Collections</div>
+
+            <h2>
+              Everything you need<br>
+              to <span class="highlight">get started.</span>
+            </h2>
+
+            <p class="section-description">
+              Bring related digital resources together in one
+              convenient bundle instead of selecting each item
+              individually.
+            </p>
+
+            <div class="bundle-price">
+              Bundles from ₹799
+            </div>
+
+            <p class="text-muted" style="font-size:12px">
+              Illustrative starting price. Final bundle contents
+              and pricing will be confirmed before launch.
+            </p>
+
+            <a href="#products" class="button button-dark">
+              Explore Products <span class="arrow">↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="section" id="faq">
+
+      <div class="container faq-layout">
+
+        <div class="reveal">
+
+          <div class="eyebrow">Frequently Asked Questions</div>
+
+          <h2>
+            Questions?<br>
+            <span class="highlight">Start here.</span>
+          </h2>
+
+          <p class="section-description">
+            Find out how the intended digital store and membership
+            experience will work.
+          </p>
+
+        </div>
+
+        <div class="faq-list reveal">
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              What is Navyukti?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              Navyukti is a planned digital solutions brand
+              offering AI resources, digital products, business
+              toolkits, and productivity resources.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              What kinds of products will be available?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              Planned categories include AI prompts, workflow
+              templates, productivity planners, content resources,
+              business templates, and curated digital bundles.
+              Actual products will be listed as they become available.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              How will digital downloads work?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              The planned store will provide purchased resources
+              through a configured digital delivery system.
+              Secure download delivery is not enabled in this frontend
+              prototype.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              Can I purchase without creating an account?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              The planned experience supports guest checkout
+              alongside optional customer accounts. Account
+              functionality must be implemented before launch.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              Which payment methods will be accepted?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              The intended payment options include UPI, cards,
+              net banking, and eligible international payments.
+              Availability depends on the selected payment provider,
+              account approval, and configuration.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              Can I cancel a membership?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              Membership cancellation terms and renewal behavior
+              must be published before subscriptions are offered.
+              The live service will need a working cancellation
+              process and subscription management.
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              What is the refund policy?
+              <span class="faq-symbol">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+              The intended policy will explain how duplicate
+              payments, failed delivery, verified technical issues,
+              and eligible cancellation requests are handled.
+              The final policy must be published and comply with
+              applicable consumer protection laws.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <div class="cta-panel reveal">
+
+          <div class="eyebrow">Your Next Step Starts Here</div>
+
+          <h2>
+            Make room for<br>
+            <span class="highlight">better work.</span>
+          </h2>
+
+          <p>
+            Discover practical digital resources and find a
+            better starting point for your next idea, task,
+            or project.
+          </p>
+
+          <a href="#products" class="button button-primary">
+            Explore the Collection <span class="arrow">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a class="brand" href="#home">
+            <span class="brand-mark">N</span>
+            <span>Navyukti</span>
+          </a>
+
+          <p class="footer-description">
+            Practical AI resources, digital products,
+            and productivity solutions for modern work.
+          </p>
+
+        </div>
+
+        <div>
+
+          <div class="footer-heading">Explore</div>
+
+          <div class="footer-links">
+            <a href="#products">Digital Products</a>
+            <a href="#solutions">AI Solutions</a>
+            <a href="#bundles">Bundles</a>
+            <a href="#pricing">Membership</a>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="footer-heading">Information</div>
+
+          <div class="footer-links">
+            <a href="#faq">FAQs</a>
+            <a href="#support" data-placeholder="Contact details">
+              Contact
+            </a>
+            <a href="#privacy" data-placeholder="Privacy policy">
+              Privacy Policy
+            </a>
+            <a href="#terms" data-placeholder="Terms of service">
+              Terms of Service
+            </a>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="footer-heading">Customer Care</div>
+
+          <div class="footer-links">
+            <a href="#faq">Help Center</a>
+            <a href="#refunds" data-placeholder="Refund policy">
+              Refund Policy
+            </a>
+            <a href="#cancellation" data-placeholder="Cancellation policy">
+              Cancellation Policy
+            </a>
+            <a href="#support" data-placeholder="Email support">
+              Email Support
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="currentYear"></span> Navyukti.
+          All rights reserved.
+        </p>
+
+        <p>
+          Built for practical, thoughtful digital work.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- CART OVERLAY -->
+
+  <div
+    class="drawer-overlay"
+    id="drawerOverlay"
+    aria-hidden="true"
+  ></div>
+
+  <!-- CART DRAWER -->
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cartTitle"
+    aria-hidden="true"
+    inert
+  >
+
+    <div class="drawer-header">
+
+      <h2 id="cartTitle">Your Cart</h2>
+
+      <button
+        class="close-button"
+        id="closeCart"
+        type="button"
+        aria-label="Close cart"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+      <div class="cart-empty">
+        Your cart is empty.<br>
+        Explore the collection to get started.
+      </div>
+
+    </div>
+
+    <div class="cart-footer">
+
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+
+      <button
+        class="button button-primary button-full"
+        id="checkoutButton"
+        type="button"
+      >
+        Continue to Checkout <span class="arrow">↗</span>
+      </button>
+
+      <p class="cart-disclaimer">
+        Demo cart only. No payment will be processed.
+      </p>
+
+    </div>
+
+  </aside>
+
+  <!-- TOAST -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <script>
+    /* ========================================
+       1. BASIC SETUP
+    ======================================== */
+
+    document.documentElement.classList.add("js");
+
+    const $ = (selector, root = document) =>
+      root.querySelector(selector);
+
+    const $$ = (selector, root = document) =>
+      [...root.querySelectorAll(selector)];
+
+    $("#currentYear").textContent = new Date().getFullYear();
+
+
+    /* ========================================
+       2. MOBILE NAVIGATION
+    ======================================== */
+
+    const menuToggle = $("#menuToggle");
+    const navLinks = $("#navLinks");
+
+    function closeMobileMenu() {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    $$("#navLinks a").forEach(link => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+
+    /* ========================================
+       3. SCROLL REVEAL ANIMATIONS
+    ======================================== */
+
+    const revealElements = $$(".reveal");
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if ("IntersectionObserver" in window && !reducedMotion) {
+
+      const revealObserver = new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -25px 0px"
+        }
+      );
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+
+    } else {
+
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+
+    }
+
+
+    /* ========================================
+       4. TOAST NOTIFICATIONS
+    ======================================== */
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      const toast = $("#toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+
+    }
+
+
+    /* ========================================
+       5. PRODUCT CATALOG AND SEARCH
+    ======================================== */
+
+    const productCards = $$(".product-card");
+    const filterButtons = $$(".filter-button");
+    const productSearch = $("#productSearch");
+
+    let activeFilter = "all";
+
+    function filterProducts() {
+
+      const query = productSearch.value
+        .trim()
+        .toLowerCase();
+
+      let visibleCount = 0;
+
+      productCards.forEach(card => {
+
+        const category = card.dataset.category;
+        const name = card.dataset.name.toLowerCase();
+
+        const description = $(
+          ".product-description",
+          card
+        ).textContent.toLowerCase();
+
+        const categoryMatches =
+          activeFilter === "all" ||
+          category === activeFilter;
+
+        const queryMatches =
+          name.includes(query) ||
+          description.includes(query);
+
+        const visible =
+          categoryMatches && queryMatches;
+
+        card.hidden = !visible;
+
+        if (visible) visibleCount++;
+
+      });
+
+      let emptyMessage = $("#emptyProducts");
+
+      if (visibleCount === 0) {
+
+        if (!emptyMessage) {
+
+          emptyMessage = document.createElement("div");
+
+          emptyMessage.id = "emptyProducts";
+          emptyMessage.className = "empty-state";
+
+          emptyMessage.textContent =
+            "No matching products found. Try another search.";
+
+          $("#productGrid").appendChild(emptyMessage);
+
+        }
+
+      } else if (emptyMessage) {
+
+        emptyMessage.remove();
+
+      }
+
+    }
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        activeFilter = button.dataset.filter;
+
+        filterButtons.forEach(item => {
+
+          const active =
+            item === button;
+
+          item.classList.toggle("active", active);
+
+          item.setAttribute(
+            "aria-pressed",
+            String(active)
+          );
+
+        });
+
+        filterProducts();
+
+      });
+
+    });
+
+    productSearch.addEventListener(
+      "input",
+      filterProducts
+    );
+
+    $$("[data-filter-link]").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        const category = link.dataset.filterLink;
+
+        const target = $(
+          `.filter-button[data-filter="${category}"]`
+        );
+
+        if (target) target.click();
+
+      });
+
+    });
+
+
+    /* ========================================
+       6. DEMO CART
+    ======================================== */
+
+    const products = {
+
+      "ai-prompts": {
+        name: "AI Prompt Starter Kit",
+        price: 199
+      },
+
+      "content-toolkit": {
+        name: "Content Creation Toolkit",
+        price: 349
+      },
+
+      "business-toolkit": {
+        name: "Small Business Toolkit",
+        price: 499
+      },
+
+      "productivity-planner": {
+        name: "Productivity Planner",
+        price: 199
+      },
+
+      "ai-workflows": {
+        name: "AI Workflow Templates",
+        price: 349
+      },
+
+      "freelancer-bundle": {
+        name: "Freelancer Starter Bundle",
+        price: 799
+      }
+
+    };
+
+    const cart = new Map();
+
+    const cartDrawer = $("#cartDrawer");
+    const drawerOverlay = $("#drawerOverlay");
+
+    const openCartButton = $("#openCart");
+    const closeCartButton = $("#closeCart");
+
+    let previouslyFocusedElement = null;
+
+    function openCart() {
+
+      previouslyFocusedElement = document.activeElement;
+
+      cartDrawer.classList.add("open");
+      drawerOverlay.classList.add("open");
+
+      cartDrawer.removeAttribute("inert");
+      cartDrawer.setAttribute("aria-hidden", "false");
+
+      drawerOverlay.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+
+      closeCartButton.focus();
+
+    }
+
+    function closeCart() {
+
+      cartDrawer.classList.remove("open");
+      drawerOverlay.classList.remove("open");
+
+      cartDrawer.setAttribute("inert", "");
+      cartDrawer.setAttribute("aria-hidden", "true");
+
+      drawerOverlay.setAttribute("aria-hidden", "true");
+
+      document.body.style.overflow = "";
+
+      if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+      }
+
+    }
+
+    openCartButton.addEventListener("click", openCart);
+
+    closeCartButton.addEventListener("click", closeCart);
+
+    drawerOverlay.addEventListener("click", closeCart);
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+
+        if (cartDrawer.classList.contains("open")) {
+          closeCart();
+        }
+
+        closeMobileMenu();
+
+      }
+
+    });
+
+
+    function formatINR(amount) {
+
+      return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0
+      }).format(amount);
+
+    }
+
+
+    function addToCart(productId) {
+
+      const product = products[productId];
+
+      if (!product) return;
+
+      const existing = cart.get(productId);
+
+      if (existing) {
+
+        existing.quantity += 1;
+
+      } else {
+
+        cart.set(productId, {
+          ...product,
+          quantity: 1
+        });
+
+      }
+
+      renderCart();
+
+      showToast(`${product.name} added to your demo cart.`);
+
+    }
+
+
+    function removeFromCart(productId) {
+
+      cart.delete(productId);
+
+      renderCart();
+
+    }
+
+
+    function renderCart() {
+
+      const cartItems = $("#cartItems");
+
+      const totalCount = [...cart.values()]
+        .reduce((sum, item) => sum + item.quantity, 0);
+
+      const subtotal = [...cart.values()]
+        .reduce(
+          (sum, item) =>
+            sum + item.price * item.quantity,
+          0
+        );
+
+      $("#cartCount").textContent = totalCount;
+
+      $("#cartTotal").textContent = formatINR(subtotal);
+
+      cartItems.replaceChildren();
+
+      if (cart.size === 0) {
+
+        const empty = document.createElement("div");
+
+        empty.className = "cart-empty";
+
+        empty.textContent =
+          "Your cart is empty. Explore the collection to get started.";
+
+        cartItems.appendChild(empty);
+
+        return;
+
+      }
+
+      cart.forEach((item, productId) => {
+
+        const row = document.createElement("div");
+
+        row.className = "cart-item";
+
+        const details = document.createElement("div");
+
+        const name = document.createElement("h3");
+
+        name.textContent = item.name;
+
+        const quantity = document.createElement("p");
+
+        quantity.textContent = `Quantity: ${item.quantity}`;
+
+        const remove = document.createElement("button");
+
+        remove.type = "button";
+        remove.className = "remove-item";
+        remove.textContent = "Remove";
+
+        remove.addEventListener("click", () => {
+          removeFromCart(productId);
+        });
+
+        details.append(name, quantity, remove);
+
+        const price = document.createElement("div");
+
+        price.className = "cart-item-price";
+
+        price.textContent = formatINR(
+          item.price * item.quantity
+        );
+
+        row.append(details, price);
+
+        cartItems.appendChild(row);
+
+      });
+
+    }
+
+
+    $$(".add-button").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        addToCart(button.dataset.product);
+
+      });
+
+    });
+
+
+    $("#checkoutButton").addEventListener("click", () => {
+
+      showToast(
+        "Demo only: connect a backend and payment gateway before accepting orders."
+      );
+
+    });
+
+
+    /* ========================================
+       7. MEMBERSHIP BILLING TOGGLE
+    ======================================== */
+
+    const billingButtons = $$(".billing-button");
+
+    function setBillingPeriod(period) {
+
+      billingButtons.forEach(button => {
+
+        const active =
+          button.dataset.billing === period;
+
+        button.classList.toggle("active", active);
+
+        button.setAttribute(
+          "aria-pressed",
+          String(active)
+        );
+
+      });
+
+      $$(".plan-price").forEach(price => {
+
+        price.textContent =
+          price.dataset[period];
+
+      });
+
+      $$(".plan-period").forEach(label => {
+
+        label.textContent =
+          label.dataset[period];
+
+      });
+
+    }
+
+    billingButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        setBillingPeriod(button.dataset.billing);
+
+      });
+
+    });
+
+
+    /* ========================================
+       8. MEMBERSHIP CTA
+    ======================================== */
+
+    $$(".choose-plan").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const plan = button.dataset.plan;
+
+        showToast(
+          `${plan} membership selected. Connect the membership checkout before launch.`
+        );
+
+      });
+
+    });
+
+
+    /* ========================================
+       9. FAQ ACCORDION
+    ======================================== */
+
+    $$(".faq-question").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const expanded =
+          button.getAttribute("aria-expanded") === "true";
+
+        const answer = button.nextElementSibling;
+
+        button.setAttribute(
+          "aria-expanded",
+          String(!expanded)
+        );
+
+        answer.hidden = expanded;
+
+      });
+
+    });
+
+
+    /* ========================================
+       10. PLACEHOLDER LINKS
+    ======================================== */
+
+    $$("[data-placeholder]").forEach(link => {
+
+      link.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        showToast(
+          `${link.dataset.placeholder} page needs to be configured before launch.`
+        );
+
+      });
+
+    });
+
+
+    /* ========================================
+       11. INITIAL STATE
+    ======================================== */
+
+    renderCart();
+
+  </script>
+
+</body>
+</html>
